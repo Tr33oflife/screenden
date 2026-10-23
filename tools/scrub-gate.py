@@ -35,9 +35,11 @@ def main():
     root = sys.argv[1]
     terms = BLOCKING + load_local_denylist()
     hits, files = [], 0
-    for dirpath, _, names in os.walk(root):
+    for dirpath, dirnames, names in os.walk(root):
+        dirnames[:] = [d for d in dirnames if d not in ("node_modules", ".git")]
         for name in sorted(names):
             if name == "scrub-gate.py": continue  # a gate never scans itself
+            if os.path.splitext(name)[1].lower() in {".png", ".jpg", ".jpeg", ".gif", ".webp", ".ico"}: continue  # binary images: no scannable text
             p = os.path.join(dirpath, name)
             rel = os.path.relpath(p, root)
             files += 1

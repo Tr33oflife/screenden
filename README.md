@@ -25,6 +25,50 @@ Everything runs in **one Cloudflare Worker** with **one D1 database**
 whose schema creates itself on first use. There is no build step, no
 separate frontend hosting, and nothing phones home.
 
+## Screenshots
+
+From a local demo instance seeded with sample data — the titles and
+poster art are fictional placeholders, and the connection details are
+the public placeholders, so what you see is the real interface with
+nothing private in it.
+
+The community gate — every visitor answers one shared question:
+
+![The ScreenDen entry gate](docs/screenshots/gate.png)
+
+Home, with the weekly staff picks and an announcement banner:
+
+![Home with Movie of the Week](docs/screenshots/home.png)
+
+Continue Watching and Recently Added, straight from Plex:
+
+![Continue Watching and Recently Added rails](docs/screenshots/continue-watching.png)
+
+Games — Game of the Week, staff picks, requests and coming soon:
+
+![The Games page](docs/screenshots/games.png)
+
+One request form for movies, shows, games and programs:
+
+![The Requests page](docs/screenshots/requests.png)
+
+The Download Centre — connection details with copy buttons (these
+move to your own server details when an admin configures them):
+
+![The Downloads page](docs/screenshots/downloads.png)
+
+The illustrated FTP guide members use to connect:
+
+![The FTP connection guide](docs/screenshots/ftp-guide.png)
+
+Settings — personalisation, connections and the admin area:
+
+![The Settings page](docs/screenshots/settings.png)
+
+And the same home on a phone:
+
+![Home on a phone](docs/screenshots/home-mobile.png)
+
 ## Features
 
 - **Plex, first-class** — plex.tv PIN sign-in with automatic server

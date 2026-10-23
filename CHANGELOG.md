@@ -38,6 +38,10 @@ build; versions are the public edition's own.
   placeholder origin instead of a deployed one, the Plex client identity
   carries the ScreenDen name, and configuration backups export in the
   `screenden-config` format while still importing the legacy format.
+- One more default caught by the demo screenshots (same day): the gate
+  page's own heading and title still carried the private community name
+  ("Welcome to The Tavern") — they now say ScreenDen, matching the
+  button that already did.
 - Repository packaging: README expanded into the full project page
   (description, deploy instructions for Wrangler and the dashboard,
   configuration reference), SETUP.md added with the full setup walk,

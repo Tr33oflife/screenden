@@ -66,25 +66,34 @@ anywhere (it is the same candidate, hardened):
   hits over the tree and over a fresh extraction of the packaged ZIP;
   the extracted copy also passes the suite 31/31. The in-repo gate
   (tools/scrub-gate.py) runs the generic checks and is green too.
-- worker.js SHA-256:
-  266caa06c026cbcd0fcacbe5d5e1da6d1eaed9f3904e0df5a11e9df3b226bd80
-- NOT verified: any live Cloudflare deploy, real Plex/Nextcloud/Kuma
-  behaviour, or browser rendering of the public edition. No deployment
-  of the public edition has been performed; the deploy instructions in
-  the README/SETUP are written from the code's actual requirements
-  (binding name, secret names and length rules, first-run flow) and are
-  scheduled for an end-to-end walk before the 1.0.0 tag.
+- worker.js SHA-256 (after the gate-branding fix below):
+  cbfa827deb66ae6da0794d86d243b646806bbe7acf9136bb1845fe74aa74b823
+- Browser rendering IS now verified locally: a demo instance of this
+  exact tree (local server, real sqlite D1, demo-only secrets, sample
+  fixture data with fictional titles/art) was screenshotted with
+  headless Chromium — gate, home, Continue Watching rails, Games,
+  Requests, Downloads, FTP guide, Settings and a mobile home, zero page
+  errors. That pass caught the gate page still saying "Welcome to The
+  Tavern" in its heading/title; fixed to ScreenDen (worker + snapshot
+  script) and re-verified. The screenshots live in docs/screenshots/
+  and on the README. NOT verified: any live Cloudflare deploy or real
+  Plex/Nextcloud/Kuma behaviour. No public deployment of the public
+  edition has been performed; the deploy instructions in the
+  README/SETUP are written from the code's actual requirements
+  (binding name, secret names and length rules, first-run flow) and
+  are scheduled for an end-to-end walk before the 1.0.0 tag.
 
 ## Publication
 
-- Public GitHub repository: https://github.com/Tr33oflife/screenden
-  First commit (b2b81bd) is this scrubbed snapshot tree — 50 files;
+- Public GitHub repository: this repository (published under the
+  owner's GitHub account). First commit (b2b81bd) is this scrubbed snapshot tree — 50 files;
   there is no private history in it. Verified live after push: the
   repository is public, the README renders as the project page, and the
   raw worker.js served by GitHub hashes identically to the verified
   local worker (266caa06…).
-- Release v1.0.0-rc.1 (pre-release) carries the verified ZIP asset
-  (screenden-1.0.0-rc.1.zip, SHA-256 53574d93…).
+- Release v1.0.0-rc.1 (pre-release) carries the verified ZIP asset;
+  it was re-issued after the gate-branding fix (final SHA-256 in the
+  distro record, P1-REPORT addendum).
 - Repository description and topics (plex, cloudflare-workers,
   self-hosted, nextcloud, uptime-kuma, media-server, wrangler, d1)
   are set.
