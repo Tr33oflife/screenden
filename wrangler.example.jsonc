@@ -1,0 +1,21 @@
+{
+  // ScreenDen — Wrangler template. Copy this file to wrangler.jsonc,
+  // replace the database_id with your own D1 database id (printed by
+  // `npx wrangler d1 create screenden-db`), then `npx wrangler deploy`.
+  // Your wrangler.jsonc is git-ignored: never commit real account or
+  // database ids. Secrets are NOT set here — use `npx wrangler secret put`.
+  "name": "screenden",
+  "main": "worker.js",
+  "compatibility_date": "2025-04-01",
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "screenden-db",
+      "database_id": "<your-d1-database-id>"
+    }
+  ],
+  "triggers": {
+    // Used only by the optional Uptime Kuma incident-history sampler.
+    "crons": ["*/5 * * * *"]
+  }
+}

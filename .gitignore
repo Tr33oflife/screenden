@@ -1,0 +1,8 @@
+# Your real Wrangler config carries your D1 database id — never commit it.
+wrangler.jsonc
+.wrangler/
+node_modules/
+.dev.vars
+.dev.vars.*
+# Local denylist for the release scrub gate (never published).
+tools/denylist.local.txt
