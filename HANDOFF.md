@@ -77,11 +77,19 @@ anywhere (it is the same candidate, hardened):
 
 ## Publication
 
-- Public GitHub repository (owner's account): see the repository this
-  file lives in. First commit is this scrubbed snapshot tree; there is
-  no private history in it.
-- Repository description and topics are set from the README's first
-  lines and feature list.
+- Public GitHub repository: https://github.com/Tr33oflife/screenden
+  First commit (b2b81bd) is this scrubbed snapshot tree — 50 files;
+  there is no private history in it. Verified live after push: the
+  repository is public, the README renders as the project page, and the
+  raw worker.js served by GitHub hashes identically to the verified
+  local worker (266caa06…).
+- Release v1.0.0-rc.1 (pre-release) carries the verified ZIP asset
+  (screenden-1.0.0-rc.1.zip, SHA-256 53574d93…).
+- Repository description and topics (plex, cloudflare-workers,
+  self-hosted, nextcloud, uptime-kuma, media-server, wrangler, d1)
+  are set.
+- Note for maintainers: the distro snapshot script preserves this
+  tree's .git directory across rebuilds.
 
 ## Known debt — tracked, scheduled for P2 (not hidden)
 
