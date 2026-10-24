@@ -74,6 +74,16 @@ anywhere (it is the same candidate, hardened):
   the tree — the internal gate allowlists worker.js for that handle
   only, and the snapshot zero-check skips the widget line. Worker
   after this change: 418f0eae5db1a274354091a169b0a282b1e1c27f75f1048303900faf81c4b406.
+- Donate button toggle added 2026-10-23 (same day): the widget is no
+  longer hardcoded in the shell. An admin checkbox in Settings →
+  Appearance & branding stores a `donations` flag in the branding
+  settings (default on); /api/dashboard/config serves it as a
+  boolean and the frontend injects the Ko-fi script only while it is
+  on, removing it live when turned off. The gate allowlist moved to
+  frontend.js plus its embedded copy in worker.js. Pinned by
+  test-donate-toggle.mjs (suite now 32 files). Worker after this
+  change: 84225b071933182093f2dea99dc1859f54fc7c5a18da50f655d9ba90f50cf1a9.
+  Tracked counts now: Download Centre 29, tavern 517, version refs 86.
 - Browser rendering IS now verified locally: a demo instance of this
   exact tree (local server, real sqlite D1, demo-only secrets, sample
   fixture data with fictional titles/art) was screenshotted with

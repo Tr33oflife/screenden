@@ -45,8 +45,18 @@ build; versions are the public edition's own.
 - Donate button (same day, owner's standard widget): a floating Ko-fi
   Donate button now appears in the app shell. It is the one intentional
   public link to the owner's donation profile in the tree — the scrub
-  gate allowlists that single occurrence in worker.js, and the handle
-  anywhere else still blocks a release.
+  gate allowlists that single occurrence in frontend.js (and its
+  embedded copy in worker.js), and the handle anywhere else still
+  blocks a release.
+- Donate button toggle (same day): the button is now toggleable. An
+  admin checkbox in Settings → Appearance & branding ("Show the
+  Donate button (Ko-fi) in the app") stores a `donations` flag in the
+  branding settings (default on, served by /api/dashboard/config);
+  the frontend injects the Ko-fi script only while the flag is on
+  and removes it when turned off, live, no reload needed. Pinned by
+  test-donate-toggle.mjs (defaults, on/off round-trip, invalid value
+  rejected, omitted value leaves the stored flag unchanged, admin
+  required).
 - Repository packaging: README expanded into the full project page
   (description, deploy instructions for Wrangler and the dashboard,
   configuration reference), SETUP.md added with the full setup walk,
