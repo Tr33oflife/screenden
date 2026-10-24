@@ -68,6 +68,12 @@ anywhere (it is the same candidate, hardened):
   (tools/scrub-gate.py) runs the generic checks and is green too.
 - worker.js SHA-256 (after the gate-branding fix below):
   cbfa827deb66ae6da0794d86d243b646806bbe7acf9136bb1845fe74aa74b823
+- Donate button added 2026-10-23 (owner's standard Ko-fi widget,
+  verbatim): a floating Donate button in the main app shell. This is
+  the one intentional public link to the owner's donation profile in
+  the tree — the internal gate allowlists worker.js for that handle
+  only, and the snapshot zero-check skips the widget line. Worker
+  after this change: 418f0eae5db1a274354091a169b0a282b1e1c27f75f1048303900faf81c4b406.
 - Browser rendering IS now verified locally: a demo instance of this
   exact tree (local server, real sqlite D1, demo-only secrets, sample
   fixture data with fictional titles/art) was screenshotted with

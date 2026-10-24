@@ -42,6 +42,11 @@ build; versions are the public edition's own.
   page's own heading and title still carried the private community name
   ("Welcome to The Tavern") — they now say ScreenDen, matching the
   button that already did.
+- Donate button (same day, owner's standard widget): a floating Ko-fi
+  Donate button now appears in the app shell. It is the one intentional
+  public link to the owner's donation profile in the tree — the scrub
+  gate allowlists that single occurrence in worker.js, and the handle
+  anywhere else still blocks a release.
 - Repository packaging: README expanded into the full project page
   (description, deploy instructions for Wrangler and the dashboard,
   configuration reference), SETUP.md added with the full setup walk,
