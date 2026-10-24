@@ -84,6 +84,20 @@ anywhere (it is the same candidate, hardened):
   test-donate-toggle.mjs (suite now 32 files). Worker after this
   change: 84225b071933182093f2dea99dc1859f54fc7c5a18da50f655d9ba90f50cf1a9.
   Tracked counts now: Download Centre 29, tavern 517, version refs 86.
+- Donate button form replaced 2026-10-23 (owner's call, pushed from
+  the private line's final v3.6.39 form): the floating Ko-fi overlay
+  widget is gone — no widget script anywhere. The button is a
+  footer-only mini button: plain link in the footer nav, dark
+  #323842 pill, white Donate text, 12px, static position. The admin
+  toggle still gates it (footer renders the link only while the
+  flag is on). The scrub gate now forbids the widget terms
+  outright (donate test excepted, since it asserts their absence),
+  and test-donate-toggle.mjs pins the new form and rejects the old
+  one. Browser-verified: link present with href + #323842 + 12px +
+  static position, no widget script, off → gone, on → back.
+  Worker after this change:
+  0b64e049aff03414234b9ef969587414f6d2223d2e503d567d2e9ef88f3d66ad.
+  Tracked counts now: Download Centre 30, tavern 518, version refs 86.
 - Browser rendering IS now verified locally: a demo instance of this
   exact tree (local server, real sqlite D1, demo-only secrets, sample
   fixture data with fictional titles/art) was screenshotted with

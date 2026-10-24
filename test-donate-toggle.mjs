@@ -60,3 +60,20 @@ console.log('PASS omitting donations from a branding save leaves it unchanged');
 r = await call('/api/admin/branding', branding({donations: '1'}), false);
 assert.equal(r.status, 401);
 console.log('PASS branding save requires admin');
+
+// The button's form: a footer plain link, never the floating widget.
+// The widget script and draw call must be absent from both the
+// frontend source and the worker (which embeds it).
+const fe = readFileSync(new URL('./frontend.js', import.meta.url), 'utf8');
+const css = readFileSync(new URL('./styles.css', import.meta.url), 'utf8');
+assert.ok(fe.includes('class="donate-link"'), 'footer donate link present');
+assert.ok(fe.includes('href="https://ko-fi.com/t4v3rn"'), 'donate link points at Ko-fi');
+assert.ok(fe.includes('donationsEnabled()'), 'footer link gated on the toggle');
+assert.ok(css.includes('.dashboard-footer-links a.donate-link'), 'donate-link rule present');
+assert.ok(css.includes('background:#323842'), 'donate-link pill is dark #323842');
+assert.ok(css.includes('font-size:12px'), 'donate-link is 12px');
+for (const term of ['kofiWidgetOverlay', 'storage.ko-fi.com']) {
+  assert.ok(!fe.includes(term), 'frontend must not contain ' + term);
+  assert.ok(!source.includes(term), 'worker must not contain ' + term);
+}
+console.log('PASS donate button is a footer mini link; widget form rejected');

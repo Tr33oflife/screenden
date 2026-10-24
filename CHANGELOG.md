@@ -57,6 +57,15 @@ build; versions are the public edition's own.
   test-donate-toggle.mjs (defaults, on/off round-trip, invalid value
   rejected, omitted value leaves the stored flag unchanged, admin
   required).
+- Donate button form replaced (same day, owner's call from the
+  private line's final form): the floating Ko-fi overlay widget is
+  gone — no widget script anywhere. The button is now a footer-only
+  mini button: a plain link to Ko-fi in the footer nav, dark
+  #323842 pill, white Donate text, 12px, never fixed to the
+  viewport. The admin toggle still gates it (footer renders the
+  link only while the flag is on). The scrub gate now forbids the
+  widget terms outright, and test-donate-toggle.mjs pins the new
+  form and rejects the old one.
 - Repository packaging: README expanded into the full project page
   (description, deploy instructions for Wrangler and the dashboard,
   configuration reference), SETUP.md added with the full setup walk,
